@@ -269,9 +269,3 @@ Tambahkan konfigurasi di `vite.config.js`:
 ```js
 server: { port: 5173, strictPort: true }
 ```
-
----
-
-## 👤 Author
-
-Dibuat sebagai bagian dari **Skill Fit Test Full Stack Programmer**.
