@@ -48,7 +48,9 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 
 ### Dashboard
 **Ringkasan visual kondisi RT terkini.** Menampilkan statistik kunci seperti jumlah penghuni, total pemasukan, dan saldo kas bulan ini.
-![Dashboard](docs/dashboard.png)
+| Dashboard |
+|---|
+| ![Dashboard](docs/dashboard.png) |
 
 ### Manajemen Rumah
 | List Rumah | Detail Rumah |
@@ -57,7 +59,9 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 
 ### Menambah Penghuni ke Rumah
 **Proses administrasi hunian.** Memungkinkan pendaftaran penghuni baru langsung ke rumah yang dipilih, dengan pencatatan tanggal mulai huni.
-![Daftarkan Penghuni](docs/assign-modal.png)
+| Form Tambah Penghuni Rumah |
+|---|
+| ![Daftarkan Penghuni](docs/assign-modal.png) |
 
 ### Manajemen Penghuni
 | List Penghuni | Form Tambah Penghuni |
