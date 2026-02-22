@@ -63,7 +63,9 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 | List Penghuni | Form Tambah Penghuni |
 |---|---|
 | ![List Penghuni](docs/residents-list.png) <br> *Daftar semua penghuni yang terdaftar, baik aktif maupun non-aktif.* | ![Form Penghuni](docs/resident-form.png) <br> *Formulir untuk menambah data penghuni baru, termasuk upload foto KTP dan penentuan status kontrak.* | 
+
 | Detail Penghuni |
+|---|
 | ![Detail Penghuni](docs/resident-detail.png) <br> *Informasi detail seorang penghuni, mencakup data pribadi dan riwayat tempat tinggal.* |
 
 ### Pembayaran Iuran
