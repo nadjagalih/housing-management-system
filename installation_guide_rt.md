@@ -20,7 +20,7 @@ Pastikan semua komponen berikut sudah terinstal di sistem Anda sebelum melanjutk
 |---|---|---|
 | PHP | 8.1 | `php -v` |
 | Composer | 2.x | `composer -v` |
-| Node.js | 18.x | `node -v` |
+| Node.js | 18.x  (recommended: Node.js 22 LTS) | `node -v` | 
 | NPM | 9.x | `npm -v` |
 | MySQL | 8.0 | `mysql --version` |
 | Git | 2.x | `git --version` |
@@ -178,7 +178,7 @@ Ini terjadi jika frontend tidak diizinkan mengakses backend.
 2.  Pastikan `VITE_API_URL` di `.env` frontend adalah `http://localhost:8000`.
 3.  Jika masih gagal, buka `backend-manajemen-rt/config/cors.php`, pastikan `allowed_origins` berisi URL frontend.
     ```php
-    'allowed_origins' => ['http://localhost:5173'],
+    'allowed_origins' => ['http://localhost:5173'], // atau sesuaikan dengan port di terminal saat npm run dev.
     ```
 4.  Jalankan `php artisan optimize:clear` di direktori backend.
 
