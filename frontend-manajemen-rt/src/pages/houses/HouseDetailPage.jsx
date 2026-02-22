@@ -76,7 +76,7 @@ export default function HouseDetailPage() {
       const errors = err.response?.data?.errors
       const msg = errors
         ? Object.values(errors).flat().join(', ')
-        : err.response?.data?.message ?? 'Gagal assign penghuni'
+        : err.response?.data?.message ?? 'Gagal Daftarkan penghuni'
       addNotification(msg, 'error')
     } finally {
       setActionLoading(false)
@@ -208,7 +208,7 @@ export default function HouseDetailPage() {
       </div>
 
       {/* Modal Assign */}
-      <Modal isOpen={assignOpen} onClose={() => { setAssignOpen(false); setSelectedResident(null) }} title="Assign Penghuni">
+      <Modal isOpen={assignOpen} onClose={() => { setAssignOpen(false); setSelectedResident(null) }} title="Daftarkan Penghuni">
         <div className="space-y-4">
 
           {/* Dropdown Penghuni */}

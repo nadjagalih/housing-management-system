@@ -12,7 +12,7 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 ### 🏠 Manajemen Rumah
 - Daftar 20 rumah dengan filter status (dihuni/kosong) dan tipe (tetap/kontrak)
 - Detail rumah: penghuni aktif, riwayat penghuni, riwayat pembayaran
-- Assign penghuni ke rumah dengan deteksi tipe otomatis
+- Daftarkan penghuni ke rumah dengan deteksi tipe otomatis
 - Lepas penghuni dari rumah dengan pencatatan tanggal selesai
 - Durasi kontrak otomatis menghitung tanggal berakhir
 
@@ -47,31 +47,42 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](docs/screenshots/dashboard.png)
+**Ringkasan visual kondisi RT terkini.** Menampilkan statistik kunci seperti jumlah penghuni, total pemasukan, dan saldo kas bulan ini, dilengkapi grafik tren keuangan 12 bulan terakhir.
+![Dashboard](docs/dashboard.png)
 
 ### Manajemen Rumah
+**Pusat data properti di lingkungan RT.**
 | List Rumah | Detail Rumah |
 |---|---|
-| ![List Rumah](docs/screenshots/houses-list.png) | ![Detail Rumah](docs/screenshots/house-detail.png) |
+| ![List Rumah](docs/houses-list.png) <br> *Melihat semua rumah dengan status hunian (dihuni/kosong) dan tipe (tetap/kontrakan).* | ![Detail Rumah](docs/house-detail.png) <br> *Menampilkan informasi lengkap rumah, termasuk penghuni aktif, riwayat penghuni, dan histori pembayaran iuran.* |
 
-### Assign Penghuni
-![Assign Penghuni](docs/screenshots/assign-modal.png)
+### Menambah Penghuni ke Rumah
+**Proses administrasi hunian yang efisien.** Memungkinkan pendaftaran penghuni baru langsung ke rumah yang dipilih, dengan pencatatan tanggal mulai huni.
+![Daftarkan Penghuni](docs/assign-modal.png)
 
 ### Manajemen Penghuni
-| List Penghuni | Form Tambah Penghuni |
+**Database lengkap seluruh warga.**
+| List Penghuni | Form Tambah Penghuni | Detail Penghuni |
 |---|---|
-| ![List Penghuni](docs/screenshots/residents-list.png) | ![Form Penghuni](docs/screenshots/resident-form.png) |
+| ![List Penghuni](docs/residents-list.png) <br> *Daftar semua penghuni yang terdaftar, baik aktif maupun non-aktif.* | ![Form Penghuni](docs/resident-form.png) <br> *Formulir untuk menambah data penghuni baru, termasuk upload foto KTP dan penentuan status kontrak.* | ![Detail Penghuni](docs/resident-detail.png) <br> *Informasi detail seorang penghuni, mencakup data pribadi dan riwayat tempat tinggal.* |
 
 ### Pembayaran Iuran
-![Pembayaran](docs/screenshots/payments-list.png)
+**Mengelola arus kas dari iuran warga.**
+| List Tagihan | Form Pembayaran Manual |
+|---|---|
+| ![Tagihan Iuran](docs/payments-list.png) <br> *Memonitor semua tagihan iuran warga, dengan filter berdasarkan bulan, tahun, dan status bayar.* | ![Form Pembayaran Manual](docs/payment-form.png) <br> *Fasilitas untuk mencatat pembayaran iuran secara manual, mendukung pembayaran untuk beberapa bulan sekaligus.* |
 
 ### Pengeluaran
-![Pengeluaran](docs/screenshots/expenses-list.png)
+**Transparansi pengelolaan dana RT.**
+| List Pengeluaran | Form Tambah Pengeluaran |
+|---|---|
+| ![Pengeluaran](docs/expenses-list.png) <br> *Mencatat dan menampilkan semua pengeluaran yang dilakukan oleh RT.* | ![Form Pengeluaran](docs/expense-form.png) <br> *Formulir untuk menambah data pengeluaran baru, lengkap dengan kategori dan keterangan.* |
 
 ### Laporan Keuangan
-| Grafik Tahunan | Laporan Tunggakan |
+**Rekapitulasi dan analisis keuangan RT.**
+| Grafik Tahunan | Bulanan |
 |---|---|
-| ![Laporan Tahunan](docs/screenshots/report-summary.png) | ![Tunggakan](docs/screenshots/report-unpaid.png) |
+| ![Laporan Tahunan](docs/report-summary.png) <br> *Ringkasan pendapatan, pengeluaran, dan saldo selama satu tahun dalam bentuk tabel dan grafik.* | ![Laporan Bulanan](docs/report-monthly.png) <br> *Laporan detail transaksi bulanan, mencakup daftar pemasukan, pengeluaran, dan tunggakan iuran.* |
 
 ---
 

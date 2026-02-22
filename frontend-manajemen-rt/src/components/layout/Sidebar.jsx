@@ -43,7 +43,7 @@ const menus = [
   { label: 'Dashboard',   path: '/dashboard',      Icon: IconDashboard },
   { label: 'Rumah',       path: '/houses',          Icon: IconHouse     },
   { label: 'Penghuni Perumahan',    path: '/residents',       Icon: IconUsers     },
-  { label: 'Pembayaran',  path: '/payments',        Icon: IconWallet    },
+  { label: 'Tagihan Iuran',  path: '/payments',        Icon: IconWallet    },
   { label: 'Pengeluaran', path: '/expenses',        Icon: IconExpense   },
   { label: 'Laporan',     path: '/reports/summary', Icon: IconChart     },
 ]
