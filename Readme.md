@@ -47,24 +47,24 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 ## 📸 Screenshots
 
 ### Dashboard
-**Ringkasan visual kondisi RT terkini.** Menampilkan statistik kunci seperti jumlah penghuni, total pemasukan, dan saldo kas bulan ini, dilengkapi grafik tren keuangan 12 bulan terakhir.
+**Ringkasan visual kondisi RT terkini.** Menampilkan statistik kunci seperti jumlah penghuni, total pemasukan, dan saldo kas bulan ini.
 ![Dashboard](docs/dashboard.png)
 
 ### Manajemen Rumah
-**Pusat data properti di lingkungan RT.**
 | List Rumah | Detail Rumah |
 |---|---|
 | ![List Rumah](docs/houses-list.png) <br> *Melihat semua rumah dengan status hunian (dihuni/kosong) dan tipe (tetap/kontrakan).* | ![Detail Rumah](docs/house-detail.png) <br> *Menampilkan informasi lengkap rumah, termasuk penghuni aktif, riwayat penghuni, dan histori pembayaran iuran.* |
 
 ### Menambah Penghuni ke Rumah
-**Proses administrasi hunian yang efisien.** Memungkinkan pendaftaran penghuni baru langsung ke rumah yang dipilih, dengan pencatatan tanggal mulai huni.
+**Proses administrasi hunian.** Memungkinkan pendaftaran penghuni baru langsung ke rumah yang dipilih, dengan pencatatan tanggal mulai huni.
 ![Daftarkan Penghuni](docs/assign-modal.png)
 
 ### Manajemen Penghuni
-**Database lengkap seluruh warga.**
-| List Penghuni | Form Tambah Penghuni | Detail Penghuni |
+| List Penghuni | Form Tambah Penghuni |
 |---|---|
-| ![List Penghuni](docs/residents-list.png) <br> *Daftar semua penghuni yang terdaftar, baik aktif maupun non-aktif.* | ![Form Penghuni](docs/resident-form.png) <br> *Formulir untuk menambah data penghuni baru, termasuk upload foto KTP dan penentuan status kontrak.* | ![Detail Penghuni](docs/resident-detail.png) <br> *Informasi detail seorang penghuni, mencakup data pribadi dan riwayat tempat tinggal.* |
+| ![List Penghuni](docs/residents-list.png) <br> *Daftar semua penghuni yang terdaftar, baik aktif maupun non-aktif.* | ![Form Penghuni](docs/resident-form.png) <br> *Formulir untuk menambah data penghuni baru, termasuk upload foto KTP dan penentuan status kontrak.* | 
+| Detail Penghuni |
+| ![Detail Penghuni](docs/resident-detail.png) <br> *Informasi detail seorang penghuni, mencakup data pribadi dan riwayat tempat tinggal.* |
 
 ### Pembayaran Iuran
 **Mengelola arus kas dari iuran warga.**
@@ -217,6 +217,9 @@ Setelah menjalankan seeder, gunakan akun berikut untuk login:
 | `payment_types` | Jenis iuran (satpam, kebersihan) |
 | `payments` | Tagihan dan pembayaran iuran |
 | `expenses` | Pengeluaran kas RT |
+
+### Entity Relationship Diagram (ERD)
+![ERD](docs/erd.png)
 
 ---
 
