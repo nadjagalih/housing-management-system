@@ -12,24 +12,25 @@ export default function HouseListPage() {
   const [page, setPage]       = useState(1)
   const PAGE_SIZE             = 10
 
-  const fetchHouses = (params = {}) => {
-    setLoading(true)
-    getHouses(params)
-      .then((res) => {
-        setHouses(res.data.data)
-        setMeta(res.data.meta)
-      })
-      .finally(() => setLoading(false))
-  }
-
   useEffect(() => {
-    const params = {}
-    if (filters.status) params.status = filters.status
-    if (filters.type)   params.type   = filters.type
-    fetchHouses(params)
+    const fetchHouses = (params = {}) => {
+      setLoading(true)
+      getHouses(params)
+        .then((res) => {
+          setHouses(res.data.data)
+          setMeta(res.data.meta)
+        })
+        .finally(() => setLoading(false))
+    }
+    fetchHouses(filters)
   }, [filters])
 
-  useEffect(() => { setPage(1) }, [filters])
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target
+    const newFilters = { ...filters, [name]: value }
+    setFilters(newFilters)
+    setPage(1)
+  }
 
   const totalPages = Math.max(1, Math.ceil(houses.length / PAGE_SIZE))
   const paginated  = houses.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
@@ -55,8 +56,9 @@ export default function HouseListPage() {
       {/* Filters */}
       <div className="flex gap-2 flex-wrap">
         <select
+          name="status"
           value={filters.status}
-          onChange={(e) => setFilters((f) => ({ ...f, status: e.target.value }))}
+          onChange={handleFilterChange}
           className="bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400 shadow-sm"
         >
           <option value="">Semua Status</option>
@@ -64,8 +66,9 @@ export default function HouseListPage() {
           <option value="empty">Kosong</option>
         </select>
         <select
+          name="type"
           value={filters.type}
-          onChange={(e) => setFilters((f) => ({ ...f, type: e.target.value }))}
+          onChange={handleFilterChange}
           className="bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400 shadow-sm"
         >
           <option value="">Semua Tipe</option>

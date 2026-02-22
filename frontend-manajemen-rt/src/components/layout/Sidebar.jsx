@@ -69,6 +69,7 @@ export default function Sidebar() {
       {/* Navigation */}
       <nav className="flex-1 py-4 px-3 space-y-0.5">
         <p className="px-3 pt-1 pb-2 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Menu</p>
+        {/* eslint-disable-next-line no-unused-vars */}
         {menus.map(({ label, path, Icon }) => (
           <NavLink
             key={path}

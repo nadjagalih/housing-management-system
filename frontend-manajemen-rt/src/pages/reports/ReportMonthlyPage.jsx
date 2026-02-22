@@ -16,17 +16,25 @@ export default function ReportMonthlyPage() {
   const [tab, setTab]         = useState('detail')
 
   useEffect(() => {
-    setLoading(true)
-    Promise.all([
-      getMonthlyDetail({ month: filters.month, year: filters.year }),
-      getUnpaid({ month: filters.month, year: filters.year }),
-    ])
-      .then(([detailRes, unpaidRes]) => {
-        setDetail(detailRes.data)
-        setUnpaid(unpaidRes.data)
-      })
-      .finally(() => setLoading(false))
+    const fetchData = () => {
+      setLoading(true)
+      Promise.all([
+        getMonthlyDetail({ month: filters.month, year: filters.year }),
+        getUnpaid({ month: filters.month, year: filters.year }),
+      ])
+        .then(([detailRes, unpaidRes]) => {
+          setDetail(detailRes.data)
+          setUnpaid(unpaidRes.data)
+        })
+        .finally(() => setLoading(false))
+    }
+    fetchData()
   }, [filters])
+
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target
+    setFilters((prev) => ({ ...prev, [name]: Number(value) }))
+  }
 
   const years      = Array.from({ length: 5 }, (_, i) => now.getFullYear() - 2 + i)
   const saldo      = detail?.saldo ?? 0
@@ -179,10 +187,10 @@ export default function ReportMonthlyPage() {
           <p className="text-sm text-gray-400 mt-0.5">{detail?.month_label ?? '—'}</p>
         </div>
         <div className="flex flex-wrap gap-2 items-center">
-          <select value={filters.month} onChange={(e) => setFilters((f) => ({ ...f, month: Number(e.target.value) }))} className={selectCls}>
+          <select name="month" value={filters.month} onChange={handleFilterChange} className={selectCls}>
             {MONTH_LABELS.map((m, i) => <option key={i + 1} value={i + 1}>{m}</option>)}
           </select>
-          <select value={filters.year} onChange={(e) => setFilters((f) => ({ ...f, year: Number(e.target.value) }))} className={selectCls}>
+          <select name="year" value={filters.year} onChange={handleFilterChange} className={selectCls}>
             {years.map((y) => <option key={y} value={y}>{y}</option>)}
           </select>
 

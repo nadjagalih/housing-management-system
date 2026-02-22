@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { assignResident, getHouse, unassignResident } from '../../api/houseApi'
 import { getResidents } from '../../api/residentApi'
@@ -39,17 +39,17 @@ export default function HouseDetailPage() {
 
   const isKontrak = selectedResident?.resident_type === 'kontrak'
 
-  const fetchHouse = () => {
+  const fetchHouse = useCallback(() => {
     setLoading(true)
     getHouse(id)
       .then((res) => setHouse(res.data.data))
       .finally(() => setLoading(false))
-  }
+  }, [id])
 
   useEffect(() => {
     fetchHouse()
     getResidents().then((res) => setResidents(res.data.data))
-  }, [id])
+  }, [fetchHouse])
 
   const handleAssign = async () => {
     if (!assignForm.resident_id || !assignForm.start_date) {

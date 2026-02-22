@@ -13,11 +13,19 @@ export default function ReportSummaryPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
-    getSummary({ year })
-      .then((res) => setData(res.data))
-      .finally(() => setLoading(false))
+    const fetchData = (newYear) => {
+      setLoading(true)
+      getSummary({ year: newYear })
+        .then((res) => setData(res.data))
+        .finally(() => setLoading(false))
+    }
+    fetchData(year)
   }, [year])
+
+  const handleYearChange = (e) => {
+    const newYear = Number(e.target.value)
+    setYear(newYear)
+  }
 
   const years  = Array.from({ length: 5 }, (_, i) => new Date().getFullYear() - 2 + i)
   const annual = data?.annual_summary
@@ -134,7 +142,7 @@ export default function ReportSummaryPage() {
         <div className="flex gap-2 items-center flex-wrap">
           <select
             value={year}
-            onChange={(e) => setYear(Number(e.target.value))}
+            onChange={handleYearChange}
             className="bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400 shadow-sm"
           >
             {years.map((y) => <option key={y} value={y}>{y}</option>)}

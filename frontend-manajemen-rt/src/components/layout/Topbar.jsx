@@ -9,7 +9,7 @@ export default function Topbar() {
   const handleLogout = async () => {
     try {
       await logout()
-    } catch (_) {
+    } catch {
       // tetap logout meski API gagal
     }
     clearAuth()

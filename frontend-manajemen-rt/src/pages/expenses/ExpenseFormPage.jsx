@@ -16,12 +16,13 @@ const emptyForm = {
   notes: '',
 }
 
+const now = new Date()
+
 export default function ExpenseFormPage() {
   const { id }    = useParams()
   const navigate  = useNavigate()
   const isEdit    = Boolean(id)
   const { addNotification } = useNotificationStore()
-  const now = new Date()
 
   const [form, setForm]       = useState(emptyForm)
   const [loading, setLoading] = useState(false)

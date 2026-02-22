@@ -67,7 +67,7 @@ export default function PaymentFormPage() {
     if (Number(form.paid_months) > maxPaidMonths) {
       setForm((prev) => ({ ...prev, paid_months: maxPaidMonths }))
     }
-  }, [maxPaidMonths])
+  }, [maxPaidMonths, form.paid_months])
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
