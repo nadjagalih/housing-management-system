@@ -80,11 +80,11 @@
 | Method | Endpoint | Auth | Keterangan |
 |--------|----------|------|------------|
 | GET | `/houses` | ✅ | List semua rumah |
-| GET | `/houses/{id}` | ✅ | Detail rumah + history penghuni & pembayaran |
+| GET | `/houses/{house}` | ✅ | Detail rumah + history penghuni & pembayaran |
 | POST | `/houses` | ✅ | Tambah rumah baru |
-| PUT | `/houses/{id}` | ✅ | Update data rumah |
-| POST | `/houses/{id}/assign-resident` | ✅ | Assign penghuni ke rumah |
-| POST | `/houses/{id}/unassign-resident` | ✅ | Lepas penghuni dari rumah |
+| PUT | `/houses/{house}` | ✅ | Update data rumah |
+| POST | `/houses/{house}/assign-resident` | ✅ | Assign penghuni ke rumah |
+| POST | `/houses/{house}/unassign-resident` | ✅ | Lepas penghuni dari rumah |
 
 ---
 
@@ -245,10 +245,10 @@
 | Method | Endpoint | Auth | Keterangan |
 |--------|----------|------|------------|
 | GET | `/residents` | ✅ | List semua penghuni |
-| GET | `/residents/{id}` | ✅ | Detail penghuni + history rumah |
+| GET | `/residents/{resident}` | ✅ | Detail penghuni + history rumah |
 | POST | `/residents` | ✅ | Tambah penghuni baru |
-| PUT | `/residents/{id}` | ✅ | Update data penghuni |
-| DELETE | `/residents/{id}` | ✅ | Soft delete penghuni |
+| PUT | `/residents/{resident}` | ✅ | Update data penghuni |
+| DELETE | `/residents/{resident}` | ✅ | Soft delete penghuni |
 
 ---
 
@@ -363,7 +363,7 @@ marital_status : "married"           (opsional)
 | Method | Endpoint | Auth | Keterangan |
 |--------|----------|------|------------|
 | GET | `/payment-types` | ✅ | List semua jenis iuran |
-| PUT | `/payment-types/{id}` | ✅ | Update nominal iuran |
+| PUT | `/payment-types/{paymentType}` | ✅ | Update nominal iuran |
 
 ---
 
@@ -403,11 +403,11 @@ marital_status : "married"           (opsional)
 | Method | Endpoint | Auth | Keterangan |
 |--------|----------|------|------------|
 | GET | `/payments` | ✅ | List tagihan |
-| GET | `/payments/{id}` | ✅ | Detail satu tagihan |
+| GET | `/payments/{payment}` | ✅ | Detail satu tagihan |
 | POST | `/payments/generate-monthly` | ✅ | Generate tagihan bulanan otomatis |
 | POST | `/payments` | ✅ | Input pembayaran manual |
-| PUT | `/payments/{id}/mark-paid` | ✅ | Tandai tagihan lunas |
-| DELETE | `/payments/{id}` | ✅ | Hapus tagihan (koreksi data) |
+| PUT | `/payments/{payment}/mark-paid` | ✅ | Tandai tagihan lunas |
+| DELETE | `/payments/{payment}` | ✅ | Hapus tagihan (koreksi data) |
 
 ---
 
@@ -530,8 +530,8 @@ marital_status : "married"           (opsional)
 |--------|----------|------|------------|
 | GET | `/expenses` | ✅ | List pengeluaran |
 | POST | `/expenses` | ✅ | Tambah pengeluaran baru |
-| PUT | `/expenses/{id}` | ✅ | Update pengeluaran |
-| DELETE | `/expenses/{id}` | ✅ | Hapus pengeluaran |
+| PUT | `/expenses/{expense}` | ✅ | Update pengeluaran |
+| DELETE | `/expenses/{expense}` | ✅ | Hapus pengeluaran |
 
 **Kategori yang tersedia:** `gaji_satpam` | `token_listrik` | `perbaikan_jalan` | `perbaikan_selokan` | `other`
 
@@ -735,7 +735,7 @@ marital_status : "married"           (opsional)
 | Method | Endpoint | Auth | Keterangan |
 |--------|----------|------|------------|
 | GET | `/public/residents` | Public | List kepala keluarga per rumah |
-| GET | `/public/residents/{house_number}` | Public | Detail penghuni + status tagihan bulan ini |
+| GET | `/public/residents/{houseNumber}` | Public | Detail penghuni + status tagihan bulan ini |
 
 ---
 
