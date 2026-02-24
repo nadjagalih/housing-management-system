@@ -110,8 +110,8 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 
 ```
 rt-management/
-├── backend/            ← Laravel 10 API
-├── frontend/           ← React 18 + Vite
+├── backend-manajemen-rt/            ← Laravel 10 API
+├── frontend-manajemen-rt/           ← React 18 + Vite
 ├── docs/
 │   └── screenshots/    ← Screenshot per fitur
 └── README.md
