@@ -50,8 +50,8 @@ Route::prefix('v1')->group(function () {
 
         // -------------------------------------------------------
         // Payments
-        // ⚠️ generate-monthly HARUS sebelum apiResource agar tidak
-        //    dianggap sebagai {payment} ID
+        // generate-monthly HARUS sebelum apiResource agar tidak
+        // dianggap sebagai {payment} ID
         // -------------------------------------------------------
         Route::post('payments/generate-monthly', [PaymentController::class, 'generateMonthly']);
         Route::put('payments/{payment}/mark-paid', [PaymentController::class, 'markPaid']);

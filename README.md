@@ -41,6 +41,7 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 - Laporan detail per bulan: semua transaksi masuk dan keluar
 - Daftar tunggakan: penghuni yang belum bayar lengkap dengan nominal
 - Ringkasan saldo tahunan
+- **Export laporan** ke PDF dan Excel (`.xlsx`) langsung dari browser
 
 ---
 
@@ -97,7 +98,7 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 | Layer | Teknologi |
 |---|---|
 | Backend | Laravel 10, PHP 8.2+ |
-| Frontend | React 18, Vite, Tailwind CSS v4 |
+| Frontend | React 19, Vite, Tailwind CSS v4 |
 | Database | MySQL 8.0 |
 | Auth | Laravel Sanctum (Bearer Token) |
 | State Management | Zustand |
@@ -111,7 +112,18 @@ Aplikasi web untuk mengelola administrasi RT perumahan elite, mencakup manajemen
 ```
 rt-management/
 ├── backend-manajemen-rt/            ← Laravel 10 API
-├── frontend-manajemen-rt/           ← React 18 + Vite
+│   └── app/
+│       ├── Http/Controllers/Api/    ← REST API Controllers
+│       ├── Services/               ← Business logic layer (HouseService, PaymentService, ReportService)
+│       ├── Models/                 ← Eloquent Models
+│       └── Http/Requests/          ← Form Request validation
+├── frontend-manajemen-rt/           ← React 19 + Vite
+│   └── src/
+│       ├── api/                    ← Axios API calls
+│       ├── pages/                  ← Halaman per fitur
+│       ├── components/             ← Reusable UI components
+│       ├── store/                  ← Zustand global state
+│       └── utils/                  ← Helper functions
 ├── docs/
 │   └── screenshots/    ← Screenshot per fitur
 └── README.md
